@@ -35,6 +35,7 @@ const CarListPopularCard = ({ navigation }) => {
         </View>
         <FlatList 
           data={Cars}
+          nestedScrollEnabled={true}
           keyExtractor={(item) => item.id}
           renderItem={({item})=> (
             <View style={styles.cardContainer}>
@@ -106,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 132,
     alignItems: 'center',
-    backgroundColor: '#00008b'
+    backgroundColor: 'skyblue'
   }
   
 });

@@ -13,10 +13,13 @@ export default function App() {
   return (
 
       <NavigationContainer>
-         <Stack.Navigator >
+         <Stack.Navigator screenOptions={{headerTitleAlign: 'center'}}>
             <Stack.Screen
               name='Home'
               component={HomeScreen}
+              options={{
+                headerShown: false,
+              }}
               />
             <Stack.Screen
               name='Messages'
@@ -26,13 +29,13 @@ export default function App() {
             <Stack.Screen
               name='Details'
               component={CarDetailsScreen}
-              options={{title: 'Details'}}
+              options={({ route }) => ({title: route.params.item.model})}
               />
             
             <Stack.Screen
               name='Profile'
               component={ProfileScreen}
-              options={{title: 'Profile'}}
+              options={{ title: 'Profile' }}
               />
             
           </Stack.Navigator>

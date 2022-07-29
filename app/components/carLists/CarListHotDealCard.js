@@ -34,6 +34,7 @@ const CarListPopularCard = ({ navigation }) => {
         </View>
         <FlatList 
           //numColumns={2}
+          
           horizontal={true}
           data={Cars}
           keyExtractor={(item) => item.id}

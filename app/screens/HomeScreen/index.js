@@ -1,10 +1,11 @@
-import { StyleSheet, View, } from 'react-native';
+import { StyleSheet, View, Button} from 'react-native';
 import  SearchBarComponent  from '../../components/searchBar';
 import { StatusBar } from 'react-native';
 
 import CarListHotDealCard from '../../components/carLists/CarListHotDealCard';
 import CarListPopularCard from '../../components/carLists/CarListPopularCard';
 import Header from '../../components/Header';
+//import { Button } from 'react-native-paper';
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
@@ -12,6 +13,10 @@ export default function HomeScreen({ navigation }) {
         <SearchBarComponent navigation={navigation}/>
         <CarListHotDealCard navigation={navigation}/>
         <CarListPopularCard navigation={navigation}/>
+        <View style={{margin: 10, }}> 
+          <Button title="Rent Now" />
+        </View>
+       
     </View >
   );
 }
