@@ -2,7 +2,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import * as Font from "expo-font";
 
 // Screens
 import HomeScreen from "./app/screens/HomeScreen";
@@ -29,14 +28,8 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{ headerTitleAlign: "center", headerShown: false }}
       >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          // options={{
-          //   headerShown: false,
-          // }}
-        />
         <Stack.Screen name="Messages" component={MessagesScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
 
         <Stack.Screen
           name="Details"
@@ -44,11 +37,7 @@ export default function App() {
           options={({ route }) => ({ title: route.params.item.model })}
         />
 
-        <Stack.Screen
-          name="Profile"
-          component={ProfileScreen}
-          // options={{ title: 'Profile' }}
-        />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

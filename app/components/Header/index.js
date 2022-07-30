@@ -1,8 +1,10 @@
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import React from "react";
 
 import { MaterialIcons } from "@expo/vector-icons";
 import { Avatar } from "@rneui/themed";
+
+const deviceWidth = Dimensions.get("window").width;
 
 const Header = ({ navigation }) => {
   return (
@@ -15,7 +17,7 @@ const Header = ({ navigation }) => {
           style={styles.menuButton}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Profile")} style={styles.avaterStyle}>
         <Avatar
           size={40}
           rounded
@@ -28,11 +30,14 @@ const Header = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //paddingTop: 15,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: 12,
+    padding: deviceWidth < 380 ? 3 : 6,
+    marginTop: deviceWidth < 380 ? 6 : 10,
+    marginHorizontal: deviceWidth < 380 ? 6 : 10,
+    // borderWidth: 1,
+    // borderColor: "blue",
   },
   menuButton: {
     padding: 2,
@@ -42,6 +47,9 @@ const styles = StyleSheet.create({
     padding: 2,
     marginRight: 4,
   },
+  avaterStyle: {
+    marginHorizontal: 10,
+  }
 });
 
 export default Header;
