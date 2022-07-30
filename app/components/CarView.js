@@ -1,6 +1,7 @@
 import { Text, View, Button, StyleSheet, Dimensions } from 'react-native';
 
 import { MaterialIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
@@ -8,7 +9,7 @@ const deviceHeight = Dimensions.get('window').height;
 const CarView = ({ car }) => {
     return (
         <View style={{ flex: 1, margin: 8 }}>
-              <MaterialIcons name="menu" size={28} color="blue" style={styles.menuButton} />
+              <Ionicons name="speedometer" size={24} color="black" />
               <Text style={styles.specTextStyle}>{car}</Text>
         </View>
     )
