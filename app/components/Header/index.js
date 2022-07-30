@@ -3,15 +3,21 @@ import React from 'react'
 
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { Avatar } from "@rneui/themed";
 
 const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-           <MaterialIcons name="menu" size={30} color="black" style={styles.menuButton} />
+           <MaterialIcons name="menu" size={32} color="black" style={styles.menuButton} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-           <FontAwesome name="user-circle" size={28} color="black" style={styles.userIcon} />
+           {/* <FontAwesome name="user-circle" size={30} color="black" style={styles.userIcon} /> */}
+           <Avatar
+              size={40}
+              rounded
+              source={require('../../../assets/profilepic.jpeg')}
+            />
         </TouchableOpacity>
        
     </View>
@@ -24,7 +30,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginHorizontal: 8,
+        marginHorizontal: 12,
     },
     menuButton: {
        padding: 2,
