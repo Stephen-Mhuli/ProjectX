@@ -1,7 +1,12 @@
-import { View, Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Button, Image, TouchableOpacity, ScrollView , Dimensions} from 'react-native';
 import { StatusBar } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import React from 'react'
+import React from 'react';
+
+import CarView from '../../components/CarView';
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 
 const CarDetailsScreen = (props) => {
 
@@ -9,65 +14,56 @@ const CarDetailsScreen = (props) => {
   //console.log(props.route.params);
 
   const car = props.route.params;
-  console.log(props.route.params)
+  console.log(props.route.params);
+
   return (
-    <View style={styles.container}>
+    
+      <View style={styles.container}>
+        <ScrollView>
       <View style={{ alignItems: 'center' }}>
-        <Image source={car.item.src} style={styles.mainImage}/>
+        <Image source={car.item.src} style={styles.mainImageStyle}/>
       </View>
+      
       <View style={styles.detailsContainer}>
+        {/* <CarView car={}/> */}
         <TouchableOpacity style={styles.imageOpacity}>
-          <Image source={car.item.src} style={styles.smallImage}/>
+          <Image source={car.item.src} style={styles.smallImageStyle}/>
         </TouchableOpacity>
         <TouchableOpacity style={styles.imageOpacity}>
-          <Image source={car.item.src} style={styles.smallImage}/>
+          <Image source={car.item.src} style={styles.smallImageStyle}/>
         </TouchableOpacity>
         <TouchableOpacity style={styles.imageOpacity}>
-          <Image source={car.item.src} style={styles.smallImage}/>
+          <Image source={car.item.src} style={styles.smallImageStyle}/>
         </TouchableOpacity>
       </View>
       <View>
-        <View>
-          <Text style={{ margin: 10, fontWeight: 'bold', fontSize: 18 }}>Key Specs</Text>
+        <View style={styles.subHeader}>
+          <Text style={styles.subHeaderTextStyle}>Key Specs</Text>
         </View>
-        <View style={{ padding: 10, marginTop: 2, marginBottom: 10, alignItems: 'center' }}>
+        <View style={styles.specsContainerStyle}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-            <View style={{ flex: 1, margin: 8 }}>
-            <MaterialIcons name="menu" size={36} color="black" style={styles.menuButton} />
-              <Text>{car.item.speed}</Text>
-            </View>
-            <View style={{ flex: 1, margin: 8 }}>
-              <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
-              <Text>{car.item.speed}</Text>
-            </View>
-            <View style={{ flex: 1, margin: 8 }}>
-              <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
-              <Text>{car.item.speed}</Text>
-            </View>
+           <CarView car={car.item.model}/>
+           <CarView car={car.item.model}/>
+           <CarView car={car.item.model}/>
           </View>
           <View style={{ flexDirection: 'row' }}>
-          <View style={{ flex: 1 , margin: 8}}>
-              <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
-              <Text>{car.item.speed}</Text>
-            </View>
-            <View style={{ flex: 1, margin: 8 }}>
-              <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
-              <Text>{car.item.speed}</Text>
-            </View>
-            <View style={{ flex: 1, margin: 8 }}>
-              <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
-              <Text>{car.item.price}</Text>
-            </View>
-
+            <CarView car={car.item.model}/>
+            <CarView car={car.item.model}/>
+            <CarView car={car.item.model}/>
           </View>
           <View>
-            <Text>About</Text>
-            <Text>
-              nknsvVN.n.nv.m..xddjhjdjldjjksdlja;j;jlhnk
-              jbkjnflznk,fkjnjwaslnaknsdzmasla,asnld;
-              mbasczbasl, dc d dxmllll vs bladlkalcjzx,l
-              kjv,bscdzxlkb.lf,xc
+          <View style={styles.subHeader}>
+             <Text style={styles.subHeaderTextStyle}>About</Text>
+          </View>
+          <View style={styles.aboutStyle}>
+          <Text style={styles.aboutTextStyle}>
+              The BMW X6, though, set the trend and it's now in it's generation.
+              These SUVs are a great fit for the modern lifestyle. The X6 is a 
+              great choice for those who want to get out of the city and into the
+              great outdoors.
             </Text>
+          </View>
+            
           </View>
 
         </View>
@@ -80,10 +76,13 @@ const CarDetailsScreen = (props) => {
             <Text>Price: {car.item.price}</Text>
            
             <Text>year: {car.item.year}</Text> */}
-      <View style={{margin: 10, }}> 
+      
+        </ScrollView>
+        <View style={{margin: 10, }}> 
           <Button title="Rent Now" />
         </View>
-      </View>
+        </View>
+     
   )
   
 }
@@ -94,30 +93,48 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#c1c1c1',
-    paddingTop: StatusBar.currentHeight
-    // marginTop: 11
-    
+    paddingTop: StatusBar.currentHeight,
   },
-  mainImage: {
-    height: 250,
-    width: "70%",
+  mainImageStyle: {
+    height: deviceHeight / 3.0,
+    width: "80%",
     resizeMode: 'contain',
   },
-  smallImage: {
-    height: 60,
+  smallImageStyle: {
+    height: deviceHeight / 12,
     width: '100%',
     resizeMode: 'contain'
   },
   detailsContainer: { 
     flexDirection: 'row',
+    marginHorizontal: deviceWidth < 380 ? 4 : 6,
    },
     imageOpacity: {
       flex: 1,
       borderColor: 'black',
-      borderWidth: 1,
-      borderRadius: 12,
+      borderWidth: deviceWidth < 380 ?  1 : 2,
+      borderRadius: deviceWidth < 380 ?  8 : 12,
       margin: 8
-    }
+    },
+  subHeader: { 
+    marginHorizontal: deviceWidth < 380 ?  10 : 16,
+    marginTop: deviceWidth < 380 ?  10 : 16,
+  },
+
+  subHeaderTextStyle: {
+    fontWeight: 'bold',
+    fontSize: deviceWidth < 380 ?  16 : 18,
+  },
+  specsContainerStyle: { 
+    padding: deviceWidth < 380 ?  8 : 16,
+    alignItems: 'center' 
+  },
+  aboutStyle: {
+    padding: deviceWidth < 380 ?  8 : 12,
+  },
+  aboutTextStyle: {
+    fontSize: deviceWidth < 380 ?  14 : 16,
+  }
 
 });
 

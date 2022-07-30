@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, TouchableWithoutFeedback } from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, TouchableWithoutFeedback, Dimensions } from 'react-native'
 
 import GlobalStyles from '../../GlobalStyles';
 import { AntDesign } from '@expo/vector-icons';
 
+
+// let { width } = Dimensions.get('window');
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const CarListPopularCard = ({ navigation }) => {
 
@@ -19,13 +23,8 @@ const CarListPopularCard = ({ navigation }) => {
    
   ]);
 
-  // const buttonHandler = () =>{
-  //   navigation.navigate('Details', { item: item });
-  // };
-
-  // const pressHandler = () =>{
-  //   navigation.navigate('Details', { item: item });
-  // }
+  console.log(width);
+  console.log(height);
 
   return (
     <View style={styles.container}>
@@ -37,6 +36,7 @@ const CarListPopularCard = ({ navigation }) => {
           
           horizontal={true}
           data={Cars}
+          showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id}
           renderItem={({item})=> (
             <View style={styles.cardContainer}>
@@ -73,7 +73,6 @@ const CarListPopularCard = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
     marginTop: 10,
     backgroundColor: '#c0c0c0'
   },
@@ -83,17 +82,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderColor: '#c0c0c0',
     marginHorizontal: 8,
-    //borderWidth: 1,
     marginVertical: 8,
     padding: 0,
     borderRadius: 12,
     backgroundColor: '#fff',
-    height: 135,
+    height: width / 3 + 7,
     //width: 170
   },
   carImage:{
-    width: 110,
-    height: 80,
+    width: width / 4 + 14,
+    height: width / 4 - 16,
     resizeMode:'contain',
   },
   cardDetails: {
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
     padding: 4,
     marginTop: 20,
     flexDirection: 'row',
-    width: 100,
+    width: width / 4 + 4,
     alignItems: 'center',
     backgroundColor: '#00008b'
   },

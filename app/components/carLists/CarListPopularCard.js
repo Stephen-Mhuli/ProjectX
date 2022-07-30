@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 132,
     alignItems: 'center',
-    backgroundColor: 'skyblue'
+    backgroundColor: '#00008b'
   }
   
 });
