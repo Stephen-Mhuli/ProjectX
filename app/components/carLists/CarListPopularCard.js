@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   },
   button: {
     borderWidth:1,
-    borderColor: '#00ffff',
+    borderColor: '#2196F3',
     borderBottomRightRadius:14,
     borderTopLeftRadius: 14,
     padding: 6,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 132,
     alignItems: 'center',
-    backgroundColor: '#00008b'
+    backgroundColor: '#2196F3'
   }
   
 });

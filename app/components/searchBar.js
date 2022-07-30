@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '100',
         padding: 4,
-        marginTop: 1
+        marginTop: 1,
+        fontFamily: 'nunito_regular'
        },
 })
 

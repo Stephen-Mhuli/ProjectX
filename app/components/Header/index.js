@@ -8,7 +8,7 @@ const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-           <MaterialIcons name="menu" size={28} color="black" style={styles.menuButton} />
+           <MaterialIcons name="menu" size={30} color="black" style={styles.menuButton} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
            <FontAwesome name="user-circle" size={28} color="black" style={styles.userIcon} />

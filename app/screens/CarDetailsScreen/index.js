@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
   },
 
   subHeaderTextStyle: {
-    fontWeight: 'bold',
     fontSize: deviceWidth < 380 ?  16 : 18,
+    fontFamily: 'nunito_bold'
   },
   specsContainerStyle: { 
     padding: deviceWidth < 380 ?  8 : 16,
@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
   },
   aboutTextStyle: {
     fontSize: deviceWidth < 380 ?  14 : 16,
+    fontFamily: 'nunito_regular',
   }
 
 });

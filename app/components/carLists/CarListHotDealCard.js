@@ -109,29 +109,33 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: width / 4 + 4,
     alignItems: 'center',
-    backgroundColor: '#00008b'
+    backgroundColor: '#2196F3'
   },
   
    buttonText: {
     fontSize: 17,
     color: '#fff',
-    marginLeft: 10
+    marginLeft: 10,
+    fontFamily: 'nunito_semi_bold'
 
    },
    buttonIcon: {
     marginLeft: 20
    },
    carTextName:{
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '300',
-    marginLeft: 6
+    marginLeft: 6,
+    marginTop: 6,
+    fontFamily: 'nunito_regular'
    },
    carPriceText: {
     fontSize: 12,
     fontWeight: '300',
     padding: 4,
     marginTop: 80,
-    marginLeft: 4
+    marginLeft: 4,
+    fontFamily: 'nunito_regular'
    },
   
 });
