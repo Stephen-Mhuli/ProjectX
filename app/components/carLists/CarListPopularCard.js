@@ -13,14 +13,6 @@ import GlobalStyles from "../../GlobalStyles";
 import { AntDesign } from "@expo/vector-icons";
 
 const CarListPopularCard = ({ navigation }) => {
-  // const pressHandler = () =>{
-  //   navigation.navigate('Details');
-  // }
-
-  // const buttonHandler = () =>{
-  //   navigation.navigate('Details', { item: item});
-  // }
-
   const [Cars, setCars] = useState([
     {
       src: require("./Cars/maseraticar.png"),

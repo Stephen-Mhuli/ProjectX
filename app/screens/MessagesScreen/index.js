@@ -23,7 +23,7 @@ const MessagesScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Header />
+        <Header navigation={navigation}/>
         <View style={styles.mainHeader}>
           <Text style={styles.mainHeaderText}>Messages</Text>
         </View>

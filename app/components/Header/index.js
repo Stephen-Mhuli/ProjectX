@@ -9,7 +9,7 @@ const deviceWidth = Dimensions.get("window").width;
 const Header = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+      <TouchableOpacity onPress={() => navigation.openDrawer()}>
         <MaterialIcons
           name="menu"
           size={32}
@@ -17,7 +17,10 @@ const Header = ({ navigation }) => {
           style={styles.menuButton}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Messages")} style={styles.avaterStyle}>
+      <TouchableOpacity
+        onPress={() => navigation.openDrawer()}
+        style={styles.avatarStyle}
+      >
         <Avatar
           size={40}
           rounded
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     padding: 2,
     marginRight: 4,
   },
-  avaterStyle: {
+  avatarStyle: {
     marginHorizontal: 10,
   }
 });
