@@ -8,6 +8,8 @@ import HomeScreen from "./app/screens/HomeScreen";
 import CarDetailsScreen from "./app/screens/CarDetailsScreen";
 import ProfileScreen from "./app/screens/ProfileScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import SignUpScreen from "./app/screens/SignUpScreen";
+import LoginScreen from "./app/screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,16 +30,17 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{ headerTitleAlign: "center", headerShown: false }}
       >
-        <Stack.Screen name="Messages" component={MessagesScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Messages" component={MessagesScreen} />
+        {/* <Stack.Screen name="Profile" component={MessagesScreen}> */}
 
         <Stack.Screen
           name="Details"
           component={CarDetailsScreen}
           options={({ route }) => ({ title: route.params.item.model })}
         />
-
-        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
