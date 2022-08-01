@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: deviceWidth < 380 ? 3 : 6,
     marginTop: deviceWidth < 380 ? 6 : 10,
-    marginHorizontal: deviceWidth < 380 ? 6 : 10,
+    marginHorizontal: deviceWidth < 380 ? 3 : 5,
     // borderWidth: 1,
     // borderColor: "blue",
   },

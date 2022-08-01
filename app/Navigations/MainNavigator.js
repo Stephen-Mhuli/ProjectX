@@ -1,8 +1,10 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 import HomeScreen from "../screens/HomeScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 import SettingsScreen from "../screens/SettingsScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 
 import CustomDrawer from "../components/CustomDrawer";
 
@@ -12,11 +14,60 @@ const MainNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+        drawerLabelStyle: {
+          marginLeft: -20,
+          fontFamily: "nunito_regular",
+          fontSize: 16,
+        },
+        drawerActiveTintColor: "#fff",
+        drawerInactiveTintColor: "#333",
+      }}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Messages" component={MessagesScreen} />
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
+      <Drawer.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          drawerIcon: () => {
+            return <Ionicons name="home" size={30} color="#fff" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          drawerIcon: () => {
+            return <Ionicons name="person-outline" size={30} color="#fff" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Messages"
+        component={MessagesScreen}
+        options={{
+          drawerIcon: () => {
+            return (
+              <Ionicons
+                name="chatbox-ellipses-outline"
+                size={30}
+                color="#fff"
+              />
+            );
+          },
+        }}
+      />
+
+      <Drawer.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          drawerIcon: () => {
+            return <Ionicons name="settings-outline" size={30} color="#fff" />;
+          },
+        }}
+      />
     </Drawer.Navigator>
   );
 };

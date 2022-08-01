@@ -209,22 +209,20 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   mainHeader: {
-    marginLeft: deviceWidth < 375 ? 8 : 20,
-    marginTop: deviceHeight < 812 ? 5 : 10,
+    marginLeft: deviceWidth < 375 ? 8 : 16,
+    marginTop: deviceHeight < 750 ? 2 : 4,
   },
   mainHeaderText: {
-    fontSize: deviceWidth < 375 ? 20 : 28,
+    fontSize: deviceWidth < 375 ? 20 : 22,
     fontFamily: "nunito_semi_bold",
   },
   messagesContainer: {
-    marginTop: deviceHeight < 812 ? 10 : 20,
-    marginHorizontal: deviceWidth < 375 ? 10 : 15,
+    marginTop: deviceHeight < 750 ? 5 : 10,
+    marginHorizontal: deviceWidth < 375 ? 10 : 10,
   },
   messageCardStyle: {
     display: "flex",
     flexDirection: "row",
-    // borderColor: "blue",
-    // borderWidth: 1,
     borderRadius: deviceWidth < 375 ? 10 : 14,
     width: deviceWidth < 375 ? deviceWidth - 20 : deviceWidth - 30,
     backgroundColor: "#fff",

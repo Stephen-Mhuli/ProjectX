@@ -1,24 +1,33 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, SafeAreaView } from "react-native";
 import { StatusBar } from "react-native";
+import Header from "../../components/Header";
 
 const DATA = [
   { id: 1, firstName: "John", lastName: "Doe", email: "john@gmail.com" },
   { id: 2, firstName: "Juma", lastName: "Doe", email: "juma@gmail.com" },
 ];
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.avatarContainer}>
-        <Text>Profile Screen</Text>
+    <SafeAreaView style={styles.container}>
+      <Header navigation={navigation} />
+      <View style={styles.headerContainer}>
+        <Text style={styles.headerTextSttle}>Profile Screen</Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: StatusBar.currentHeight,
+  },
+  headerContainer: {
+    alignItems: "center",
+  },
+  headerTextSttle: {
+    fontSize: 20,
+    fontFamily: "nunito_semi_bold",
   },
 });
 
