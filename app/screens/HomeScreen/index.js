@@ -4,8 +4,8 @@ import SearchBarComponent from "../../components/searchBar";
 import { StatusBar } from "react-native";
 
 // Components
-import CarListHotDealCard from "../../components/carLists/CarListHotDealCard";
-import CarListPopularCard from "../../components/carLists/CarListPopularCard";
+import CarListHotDealCard from "../../components/carLists/CarListHotDeal";
+import CarListPopular from "../../components/carLists/CarListPopular";
 import Header from "../../components/Header";
 import cars from "../../../Common/Data/cars"
 let { width } = Dimensions.get("window");
@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
       <Header navigation={navigation} />
       <SearchBarComponent navigation={navigation} />
       <CarListHotDealCard navigation={navigation} cars={cars} />
-      <CarListPopularCard navigation={navigation} cars={cars} />
+      <CarListPopular navigation={navigation} cars={cars} />
     </SafeAreaView>
   );
 }

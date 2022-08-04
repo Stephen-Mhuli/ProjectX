@@ -2,11 +2,6 @@ import { View, Text, StyleSheet, Image, SafeAreaView } from "react-native";
 import { StatusBar } from "react-native";
 import Header from "../../components/Header";
 
-const DATA = [
-  { id: 1, firstName: "John", lastName: "Doe", email: "john@gmail.com" },
-  { id: 2, firstName: "Juma", lastName: "Doe", email: "juma@gmail.com" },
-];
-
 const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
