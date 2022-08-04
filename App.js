@@ -5,7 +5,6 @@ import { useFonts } from "expo-font";
 // Navigators
 import MainNavigator from "./app/Navigations/MainNavigator";
 import AuthStackNavigator from "./app/Navigations/AuthStackNavigator";
-import AppStackNavigator from "./app/Navigations/AppStackNavigator";
 
 // Fonts
 const App = () => {
@@ -24,7 +23,6 @@ const App = () => {
     <NavigationContainer>
       <MainNavigator />
       {/* <AuthStackNavigator /> */}
-      {/* <AppStackNavigator /> */}
     </NavigationContainer>
   );
 };

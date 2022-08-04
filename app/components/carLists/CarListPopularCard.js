@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import {
+;import {
   View,
   Text,
   StyleSheet,
@@ -12,65 +11,14 @@ import {
 import GlobalStyles from "../../GlobalStyles";
 import { AntDesign } from "@expo/vector-icons";
 
-const CarListPopularCard = ({ navigation }) => {
-  const [Cars, setCars] = useState([
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 1,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 2,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 3,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 4,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 5,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 6,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-  ]);
-
+const CarListPopularCard = ({ navigation, cars }) => {
   return (
     <View style={styles.container}>
       <View>
         <Text style={GlobalStyles.commonHeading}>Popular</Text>
       </View>
       <FlatList
-        data={Cars}
+        data={cars}
         nestedScrollEnabled={true}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (

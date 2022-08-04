@@ -18,7 +18,7 @@ const Header = ({ navigation }) => {
         />
       </TouchableOpacity>
       <TouchableOpacity
-        onPress={() => navigation.openDrawer()}
+        onPress={() => navigation.navigate("Profile")}
         style={styles.avatarStyle}
       >
         <Avatar
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   avatarStyle: {
     marginHorizontal: 10,
-  }
+  },
 });
 
 export default Header;

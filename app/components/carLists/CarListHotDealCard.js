@@ -13,64 +13,10 @@ import {
 import GlobalStyles from "../../GlobalStyles";
 import { AntDesign } from "@expo/vector-icons";
 
-// let { width } = Dimensions.get('window');
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
-const CarListPopularCard = ({ navigation }) => {
-  const [Cars, setCars] = useState([
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 1,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 2,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 3,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 4,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-    {
-      src: require("./Cars/maseraticar.png"),
-      id: 5,
-      model: "BMW X6",
-      price: "50$/Day",
-      year: 2017,
-      speed: "120 km/hr",
-    },
-    {
-      src: require("./Cars/toyotacar1.png"),
-      id: 6,
-      model: "TOYOTA",
-      price: "30$/Day",
-      year: 2019,
-      speed: "100 km/hr",
-    },
-  ]);
-
-  console.log(width);
-  console.log(height);
+const CarListPopularCard = ({ navigation, cars }) => {
 
   return (
     <View style={styles.container}>
@@ -78,10 +24,8 @@ const CarListPopularCard = ({ navigation }) => {
         <Text style={GlobalStyles.commonHeading}>Hot Deals</Text>
       </View>
       <FlatList
-        //numColumns={2}
-
         horizontal={true}
-        data={Cars}
+        data={cars}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (

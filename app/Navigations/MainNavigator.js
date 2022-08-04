@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import HomeScreen from "../screens/HomeScreen";
+import HomeStackNavigator from "./HomeStackNavigator";
 import MessagesScreen from "../screens/MessagesScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
@@ -27,10 +27,10 @@ const MainNavigator = () => {
     >
       <Drawer.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStackNavigator}
         options={{
           drawerIcon: () => {
-            return <Ionicons name="home" size={30} color="#fff" />;
+            return <Ionicons name="home" size={24} color="#fff" />;
           },
         }}
       />
@@ -39,7 +39,7 @@ const MainNavigator = () => {
         component={ProfileScreen}
         options={{
           drawerIcon: () => {
-            return <Ionicons name="person-outline" size={30} color="#fff" />;
+            return <Ionicons name="person-outline" size={24} color="#fff" />;
           },
         }}
       />
@@ -51,7 +51,7 @@ const MainNavigator = () => {
             return (
               <Ionicons
                 name="chatbox-ellipses-outline"
-                size={30}
+                size={24}
                 color="#fff"
               />
             );
@@ -64,7 +64,7 @@ const MainNavigator = () => {
         component={SettingsScreen}
         options={{
           drawerIcon: () => {
-            return <Ionicons name="settings-outline" size={30} color="#fff" />;
+            return <Ionicons name="settings-outline" size={24} color="#fff" />;
           },
         }}
       />
