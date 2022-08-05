@@ -19,12 +19,10 @@ import { FontAwesome5 } from "@expo/vector-icons";
 const deviceWidth = Dimensions.get("window").width;
 const deviceHeight = Dimensions.get("window").height;
 
-const CarDetailsScreen = (props) => {
-  //const { id, model, src, year, price, speed } = props.route.params;
+const CarDetailsScreen = ({ route }) => {
   //console.log(props.route.params);
-
-  const car = props.route.params;
-  console.log(props.route.params);
+  const car = route.params;
+  console.log(route.params);
 
   return (
     <SafeAreaView style={styles.container}>
