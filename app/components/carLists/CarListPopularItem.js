@@ -5,10 +5,14 @@ import {
   TouchableOpacity,
   Image,
   TouchableWithoutFeedback,
+  Dimensions,
 } from "react-native";
 
 import GlobalStyles from "../../GlobalStyles";
 import { AntDesign } from "@expo/vector-icons";
+
+const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 
 const CarListPopularItem = ({ navigation, item }) => {
   return (
@@ -19,8 +23,8 @@ const CarListPopularItem = ({ navigation, item }) => {
         >
           <Image source={item.src} style={styles.carImage} />
         </TouchableWithoutFeedback>
-        <View style={styles.cardDetails}>
-          <View>
+        <View style={styles.carDetails}>
+          <View style={styles.carSpeedPrice}> 
             <Text style={GlobalStyles.carTextName}>{item.model}</Text>
             <Text style={GlobalStyles.carSpeedText}>{item.speed}</Text>
             <Text style={GlobalStyles.carPriceText}>{item.price}</Text>
@@ -31,7 +35,7 @@ const CarListPopularItem = ({ navigation, item }) => {
           >
             <Text style={GlobalStyles.buttonText}>Details</Text>
             <View style={GlobalStyles.buttonIcon}>
-              <AntDesign name="right" size={20} color="white" />
+              <AntDesign name="right" size={deviceWidth * 0.065} color="white" />
             </View>
           </TouchableOpacity>
         </View>
@@ -44,35 +48,33 @@ export default CarListPopularItem;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    display: "flex",
-    flex: 1,
     flexDirection: "row",
-    borderColor: "#c0c0c0",
-    marginHorizontal: 8,
-    borderWidth: 1,
-    marginVertical: 8,
-    padding: 2,
-    borderRadius: 14,
+    marginHorizontal: deviceWidth * 0.02,
+    marginVertical: deviceHeight * 0.008,
+    borderRadius: deviceWidth * 0.04,
     backgroundColor: "#fff",
+    alignItems: "center",
   },
   carImage: {
-    width: 230,
-    height: 150,
-    resizeMode: "stretch",
+    width: deviceWidth * 0.61,
+    height: deviceHeight * 0.192,
+    resizeMode: "contain",
   },
-  cardDetails: {
-    marginLeft: 2,
-    marginTop: 2,
+  carDetails: {
+    marginLeft: deviceWidth * 0.009,
+    marginTop: deviceWidth * 0.009,
+  },
+  carSpeedPrice: {
+    flex: 1
   },
   button: {
-    borderWidth: 1,
-    borderColor: "#2196F3",
-    borderBottomRightRadius: 14,
-    borderTopLeftRadius: 14,
-    padding: 6,
-    marginTop: 20,
+    flex: 2,
+    borderBottomRightRadius: deviceWidth * 0.04,
+    borderTopLeftRadius: deviceWidth * 0.04,
+    padding: deviceWidth*0.014,
+    marginTop: deviceWidth*0.051,
     flexDirection: "row",
-    width: 132,
+    width: deviceWidth * 0.34,
     alignItems: "center",
     backgroundColor: "#2196F3",
   },

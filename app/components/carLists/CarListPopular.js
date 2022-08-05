@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import GlobalStyles from "../../GlobalStyles";
 import CarListPopularItem from "./CarListPopularItem";
 
-const CarListPopularCard = ({ navigation, cars }) => {
+const CarListPopular = ({ navigation, cars }) => {
   return (
     <View style={styles.container}>
       <View>
@@ -14,7 +14,7 @@ const CarListPopularCard = ({ navigation, cars }) => {
         nestedScrollEnabled={true}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <CarListPopularItem navigation={navigation} item={item} cars={cars} />
+          <CarListPopularItem navigation={navigation} item={item} />
         )}
       />
     </View>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CarListPopularCard;
+export default CarListPopular;

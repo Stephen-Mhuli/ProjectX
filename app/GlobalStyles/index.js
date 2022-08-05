@@ -5,42 +5,39 @@ const deviceHeight = Dimensions.get("window").height;
 
 const GlobalStyles = StyleSheet.create({
   commonHeading: {
-    fontSize: deviceWidth < 380 ? 16 : 20,
-    fontWeight: "500",
-    marginHorizontal: deviceHeight < 700 ? 10 : 15,
-    marginVertical: deviceWidth < 380 ? 2 : 4,
+    fontSize: deviceWidth * 0.055,
+    marginHorizontal: deviceHeight * 0.015,
+    marginVertical: deviceWidth * 0.008,
     fontFamily: "nunito_semi_bold",
   },
   carTextName: {
-    fontSize: 18,
-    fontWeight: "300",
+    fontSize: deviceWidth * 0.045,
     color: "black",
-    letterSpacing: 1,
-    padding: 1,
+    letterSpacing: 0.2,
+    padding: deviceWidth * 0.006,
     fontFamily: "nunito_semi_bold",
   },
   carSpeedText: {
-    fontSize: 15,
-    fontWeight: "300",
+    fontSize: deviceWidth * 0.04,
     color: "lightgrey",
-    padding: 1,
+    padding: deviceWidth * 0.006,
     fontFamily: "nunito_regular",
   },
   carPriceText: {
-    fontSize: 15,
+    fontSize: deviceWidth * 0.038,
     fontWeight: "300",
-    padding: 4,
-    marginTop: 6,
+    padding: deviceWidth * 0.006,
+    marginTop: deviceWidth*0.009,
     fontFamily: "nunito_regular",
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: deviceWidth*0.048,
     color: "#fff",
-    marginLeft: 4,
+    marginLeft: deviceWidth * 0.004,
     fontFamily: "nunito_semi_bold",
   },
   buttonIcon: {
-    marginLeft: 20,
+    marginLeft: deviceWidth * 0.055,
   },
 });
 

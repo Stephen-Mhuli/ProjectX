@@ -32,7 +32,11 @@ const CarListHotDealItem = ({ navigation, item }) => {
           >
             <Text style={styles.buttonText}>Rent</Text>
             <View style={styles.buttonIcon}>
-              <AntDesign name="right" size={16} color="white" />
+              <AntDesign
+                name="right"
+                size={deviceWidth * 0.045}
+                color="white"
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -45,19 +49,19 @@ export default CarListHotDealItem;
 
 const styles = StyleSheet.create({
   cardContainer: {
-    marginHorizontal: deviceWidth < 380 ? 6 : 8,
-    marginVertical: deviceHeight < 700 ? 2 : 4,
-    borderRadius: deviceWidth < 375 ? 10 : 12,
+    marginHorizontal: deviceWidth * 0.02,
+    marginVertical: deviceHeight * 0.008,
+    borderRadius: deviceWidth * 0.035,
     backgroundColor: "#fff",
-    height: deviceWidth / 3 + 7,
+    height: deviceWidth * 0.36,
   },
   modelNameImageStyle: {
     flex: 3,
     flexDirection: "row",
   },
   carImage: {
-    width: deviceWidth / 4 + 14,
-    height: deviceHeight / 6 - 16,
+    width: deviceWidth * 0.288,
+    height: deviceHeight * 0.144,
     resizeMode: "contain",
   },
   priceButtonStyle: {
@@ -67,36 +71,36 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   carPriceText: {
-    fontSize: deviceWidth < 375 ? 10 : 12,
-    padding: deviceWidth < 375 ? 1 : 2,
-    marginLeft: 4,
+    fontSize: deviceWidth * 0.034,
+    padding: deviceWidth * 0.01,
+    marginLeft: deviceWidth * 0.01,
     fontFamily: "nunito_regular",
     alignSelf: "center",
   },
   button: {
     flexDirection: "row",
     backgroundColor: "#2196F3",
-    borderBottomRightRadius: deviceWidth < 375 ? 10 : 12,
-    borderTopLeftRadius: deviceWidth < 375 ? 10 : 12,
-    padding: deviceWidth < 370 ? 2 : 3.5,
+    borderBottomRightRadius: deviceWidth * 0.035,
+    borderTopLeftRadius: deviceWidth * 0.035,
+    padding: deviceWidth * 0.009,
     alignSelf: "flex-start",
     alignItems: "center",
   },
   buttonText: {
-    fontSize: deviceWidth < 370 ? 10 : 16,
+    fontSize: deviceWidth * 0.038,
     color: "#fff",
-    marginLeft: 2,
+    marginLeft: deviceWidth * 0.01,
     fontFamily: "nunito_semi_bold",
   },
   buttonIcon: {
-    marginLeft: 20,
-    marginHorizontal: deviceWidth < 370 ? 2 : 10,
-    marginVertical: deviceWidth < 370 ? 2 : 5,
+    marginLeft: deviceWidth * 0.035,
+    marginHorizontal: deviceWidth * 0.02,
+    marginVertical: deviceWidth * 0.015,
   },
   carTextName: {
-    fontSize: deviceWidth < 375 ? 9 : 12,
-    marginVertical: deviceHeight < 700 ? 5 : 8,
-    marginHorizontal: deviceWidth < 370 ? 3 : 6,
+    fontSize: deviceWidth * 0.0306,
+    marginVertical: deviceWidth * 0.01,
+    marginHorizontal: deviceWidth * 0.016,
     fontFamily: "nunito_semi_bold",
   },
 });
