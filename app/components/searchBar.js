@@ -3,12 +3,15 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Searchbar } from "react-native-paper";
 import GlobalStyles from "../GlobalStyles";
 
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
 
 const SearchBarComponent = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const onChangeSearch = (query) => setSearchQuery(query);
+
+  const deviceWidth = Dimensions.get("window").width;
+  const deviceHeight = Dimensions.get("window").height;
 
   return (
     <View style={styles.search}>
@@ -19,6 +22,7 @@ const SearchBarComponent = () => {
       <Searchbar
         iconColor="gray"
         placeholder="Search a car"
+        style={{ fontFamily: "nunito_regular" }}
         onChangeText={onChangeSearch}
         value={searchQuery}
         clearIcon={({ size, color }) => (

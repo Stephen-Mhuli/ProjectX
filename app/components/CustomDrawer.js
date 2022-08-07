@@ -30,14 +30,18 @@ const CustomDrawer = (props) => {
           </View>
         </View>
         <View style={{ borderColor: "#fff", borderWidth: 1 }} />
-        <View style={{ flex: 1, marginTop: 10 }}>
+        <View style={{ flex: 1, marginTop: deviceHeight * 0.01 }}>
           <DrawerItemList {...props} />
         </View>
       </DrawerContentScrollView>
       <View style={styles.customButton}>
         <TouchableOpacity style={styles.btnStyle}>
           <View style={styles.btnContainer}>
-            <Ionicons name="exit-outline" size={22} color="#fff" />
+            <Ionicons
+              name="exit-outline"
+              size={deviceWidth * 0.062}
+              color="#fff"
+            />
             <Text style={styles.textStyle}>Sign Out</Text>
           </View>
         </TouchableOpacity>
@@ -49,49 +53,48 @@ const CustomDrawer = (props) => {
 const styles = StyleSheet.create({
   drawerContainer: {
     flex: 1,
-    marginTop: deviceHeight < 800 ? 10 : 20,
+    marginTop: deviceHeight * 0.01,
     backgroundColor: "#2196F3",
   },
-  scrollSttyle: {},
   userProfileStyle: {
     alignItems: "center",
-    marginTop: deviceHeight < 750 ? 20 : 40,
-    marginBottom: deviceHeight < 750 ? 5 : 10,
+    marginTop: deviceHeight * 0.05,
+    marginBottom: deviceHeight * 0.01,
   },
   userInfo: {
     flexDirection: "column",
     justifyContent: "center",
   },
   imageStyle: {
-    width: deviceWidth < 375 ? 80 : 100,
-    height: deviceHeight < 750 ? 80 : 100,
+    width: deviceWidth * 0.25,
+    height: deviceHeight * 0.12,
     borderRadius: 50,
-    marginBottom: deviceHeight < 750 ? 10 : 20,
+    marginBottom: deviceHeight * 0.02,
   },
   nameTextStyle: {
-    fontSize: deviceWidth < 375 ? 10 : 13,
+    fontSize: deviceWidth * 0.036,
     fontFamily: "nunito_semi_bold",
-    marginBottom: deviceHeight < 750 ? 5 : 8,
+    marginBottom: deviceHeight * 0.01,
     color: "#fff",
   },
   customButton: {
     borderTopWidth: 1,
-    borderTopColor: "#fff",
-    padding: 10,
+    borderTopColor: "#eee",
+    padding: deviceWidth * 0.02,
   },
   btnStyle: {
     paddingVertical: 5,
   },
   btnContainer: {
-    marginHorizontal: deviceWidth < 375 ? 5 : 12,
-    marginVertical: deviceHeight < 750 ? 2 : 4,
+    marginHorizontal: deviceWidth * 0.03,
+    marginVertical: deviceWidth * 0.02,
     flexDirection: "row",
     alignItems: "center",
   },
   textStyle: {
-    fontSize: deviceWidth < 375 ? 12 : 16,
+    fontSize: deviceWidth * 0.044,
     fontFamily: "nunito_regular",
-    marginLeft: deviceWidth < 375 ? 5 : 10,
+    marginLeft: deviceWidth * 0.03,
   },
 });
 

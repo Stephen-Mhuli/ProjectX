@@ -14,15 +14,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 
-//import CarView from '../../components/CarView';
-
 const deviceWidth = Dimensions.get("window").width;
 const deviceHeight = Dimensions.get("window").height;
 
 const CarDetailsScreen = ({ route }) => {
-  //console.log(props.route.params);
   const car = route.params;
-  console.log(route.params);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,7 +28,6 @@ const CarDetailsScreen = ({ route }) => {
         </View>
 
         <View style={styles.detailsContainer}>
-          {/* <CarView car={}/> */}
           <TouchableOpacity style={styles.imageOpacity}>
             <Image source={car.item.src} style={styles.smallImageStyle} />
           </TouchableOpacity>
