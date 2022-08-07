@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#c0c0c0",
+    backgroundColor: "#eee",
     paddingTop: StatusBar.currentHeight,
   },
 });

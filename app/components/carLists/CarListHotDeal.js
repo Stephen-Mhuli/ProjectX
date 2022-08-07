@@ -37,7 +37,7 @@ const CarListHotDeal = ({ navigation, cars }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: deviceHeight * 0.01,
-    backgroundColor: "#c0c0c0",
+    backgroundColor: "#eee",
   },
 });
 
