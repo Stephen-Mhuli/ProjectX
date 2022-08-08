@@ -6,7 +6,7 @@ const deviceHeight = Dimensions.get("window").height;
 const GlobalStyles = StyleSheet.create({
   commonHeading: {
     fontSize: deviceWidth * 0.055,
-    marginHorizontal: deviceHeight * 0.015,
+    marginHorizontal: deviceHeight * 0.02,
     marginVertical: deviceWidth * 0.008,
     fontFamily: "nunito_semi_bold",
   },

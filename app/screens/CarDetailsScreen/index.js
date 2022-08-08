@@ -107,7 +107,7 @@ const CarDetailsScreen = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#c1c1c1",
+    backgroundColor: "#eeeeee",
     paddingTop: StatusBar.currentHeight,
   },
   mainImageStyle: {
@@ -166,9 +166,9 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   rentNowButton: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#0AABDE",
     borderRadius: deviceWidth < 380 ? 8 : 12,
-    width: deviceWidth < 380 ? "80%" : "90%",
+    width: deviceWidth < 380 ? "90%" : "90%",
     height: deviceHeight < 380 ? 35 : 50,
     alignSelf: "center",
     justifyContent: "center",
