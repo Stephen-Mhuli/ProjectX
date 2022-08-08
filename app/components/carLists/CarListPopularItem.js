@@ -65,17 +65,17 @@ const styles = StyleSheet.create({
     marginTop: deviceWidth * 0.009,
   },
   carSpeedPrice: {
-    flex: 1
+    flex: 1,
   },
   button: {
     flex: 2,
     borderBottomRightRadius: deviceWidth * 0.04,
     borderTopLeftRadius: deviceWidth * 0.04,
-    padding: deviceWidth*0.014,
-    marginTop: deviceWidth*0.051,
+    padding: deviceWidth * 0.014,
+    marginTop: deviceWidth * 0.051,
     flexDirection: "row",
     width: deviceWidth * 0.34,
     alignItems: "center",
-    backgroundColor: "#2196F3",
+    backgroundColor: "#0AABDE",
   },
 });

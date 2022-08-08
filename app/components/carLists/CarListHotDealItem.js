@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   button: {
     flexDirection: "row",
-    backgroundColor: "#2196F3",
+    backgroundColor: "#0AABDE",
     borderBottomRightRadius: deviceWidth * 0.035,
     borderTopLeftRadius: deviceWidth * 0.035,
     padding: deviceWidth * 0.009,
